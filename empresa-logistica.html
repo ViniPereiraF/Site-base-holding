@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vinicius Logística — Holding Vinicius</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    :root { --e1:#1A0A00; --e2:#0D0500; --acc:#E85D20; }
+    .emp-hero { min-height:100vh; background:linear-gradient(145deg,#1A0A00 0%,#0D0500 60%,#080808 100%); display:flex; align-items:center; justify-content:center; text-align:center; padding:0 5vw; position:relative; overflow:hidden; }
+    .emp-hero::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px); background-size:60px 60px; }
+    .emp-hero-content { position:relative; z-index:2; max-width:800px; }
+    .emp-logo-wrap { margin-bottom:2.5rem; }
+    .emp-logo-wrap img { max-width:180px; max-height:180px; object-fit:contain; filter:drop-shadow(0 8px 32px rgba(0,0,0,0.5)); }
+    .emp-tag { display:inline-block; font-family:'Barlow Condensed',sans-serif; font-size:0.7rem; letter-spacing:0.4em; text-transform:uppercase; color:#E85D20; border:1px solid #E85D2044; padding:0.3rem 1rem; margin-bottom:1.5rem; }
+    .emp-hero-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2.8rem,7vw,5.5rem); font-weight:300; color:#F5F0E8; line-height:1; margin-bottom:1rem; }
+    .emp-hero-title em { font-style:italic; color:#E85D20; }
+    .emp-hero-tagline { font-family:'Cormorant Garamond',serif; font-size:clamp(1rem,2.5vw,1.35rem); font-style:italic; color:rgba(245,240,232,0.65); margin-bottom:2.5rem; line-height:1.6; }
+    .emp-hero-btn { display:inline-flex; align-items:center; gap:0.7rem; background:transparent; color:#F5F0E8; padding:0.9rem 2.2rem; font-family:'Barlow Condensed',sans-serif; font-size:0.88rem; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none; font-weight:600; border:2px solid rgba(245,240,232,0.5); border-radius:50px; transition:all 0.3s ease; }
+    .emp-hero-btn:hover { background:#E85D20; color:#080808; border-color:#E85D20; transform:translateY(-2px); }
+    .emp-about { background:#0d0d0d; padding:8rem 5vw; }
+    .emp-about-inner { max-width:900px; margin:0 auto; }
+    .emp-section-label { font-family:'Barlow Condensed',sans-serif; font-size:0.7rem; letter-spacing:0.45em; text-transform:uppercase; color:#E85D20; margin-bottom:1rem; }
+    .emp-section-title { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,4vw,3rem); font-weight:300; color:#F5F0E8; line-height:1.1; margin-bottom:1.5rem; }
+    .emp-section-title em { font-style:italic; color:#E85D20; }
+    .emp-desc { font-size:1rem; color:#999; line-height:1.9; margin-bottom:1rem; }
+    .emp-divider { width:60px; height:2px; background:linear-gradient(90deg,#E85D20,transparent); margin:1.5rem 0; }
+    /* Dados */
+    .dados-section { background:#0a0a0a; padding:5rem 5vw; border-top:1px solid rgba(255,255,255,0.04); }
+    .dados-inner { max-width:1100px; margin:0 auto; }
+    .dados-eyebrow { font-family:'Barlow Condensed',sans-serif; font-size:0.68rem; letter-spacing:0.42em; text-transform:uppercase; color:#E85D20; margin-bottom:0.6rem; }
+    .dados-title { font-family:'Cormorant Garamond',serif; font-size:clamp(1.7rem,3vw,2.4rem); font-weight:300; color:#F5F0E8; margin-bottom:2.5rem; }
+    .dados-title em { font-style:italic; color:#E85D20; }
+    .dados-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,0.05); margin-bottom:1px; }
+    .di-item { background:#111; padding:1.3rem 1.6rem; transition:background 0.25s; }
+    .di-item:hover { background:#171717; }
+    .di-label { font-family:'Barlow Condensed',sans-serif; font-size:0.6rem; letter-spacing:0.3em; text-transform:uppercase; color:#E85D20; margin-bottom:0.45rem; }
+    .di-value { font-size:0.9rem; color:#CCC; line-height:1.45; font-weight:300; }
+    .di-item-contact { background:#141414; padding:1.4rem 1.8rem; display:flex; align-items:center; gap:2.5rem; flex-wrap:wrap; border-top:1px solid rgba(255,255,255,0.05); }
+    .di-contact-group { display:flex; flex-direction:column; gap:0.2rem; }
+    .di-contact-label { font-family:'Barlow Condensed',sans-serif; font-size:0.58rem; letter-spacing:0.35em; text-transform:uppercase; color:#E85D20; opacity:0.8; }
+    .di-contact-val { font-size:0.92rem; color:#DDD; font-weight:300; }
+    .di-contact-val a { color:#DDD; text-decoration:none; }
+    .di-item-oferece { background:#131313; padding:1.4rem 1.8rem; border-top:1px solid rgba(255,255,255,0.05); }
+    .di-oferece-label { font-family:'Barlow Condensed',sans-serif; font-size:0.58rem; letter-spacing:0.35em; text-transform:uppercase; color:#E85D20; margin-bottom:0.5rem; }
+    .di-oferece-text { font-size:0.92rem; color:#CCC; line-height:1.55; font-weight:300; }
+    /* CTA */
+    .emp-cta-section { background:linear-gradient(135deg,#1A0A00CC 0%,#0D0500CC 100%); padding:6rem 5vw; text-align:center; position:relative; overflow:hidden; }
+    .emp-cta-section::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px); background-size:50px 50px; }
+    .emp-cta-inner { position:relative; z-index:2; max-width:600px; margin:0 auto; }
+    .emp-cta-title { font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,4vw,2.8rem); font-weight:300; font-style:italic; color:#F5F0E8; margin-bottom:2rem; line-height:1.3; }
+    .emp-cta-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+    .emp-btn-wa { display:inline-flex; align-items:center; gap:0.7rem; background:#25D366; color:#fff; padding:0.9rem 2rem; border-radius:50px; font-family:'Barlow Condensed',sans-serif; font-size:0.88rem; letter-spacing:0.12em; text-transform:uppercase; font-weight:600; text-decoration:none; transition:background 0.3s ease,transform 0.3s ease,box-shadow 0.3s ease; border:none; }
+    .emp-btn-wa:hover { background:#1ebe5d; transform:translateY(-2px); box-shadow:0 8px 24px rgba(37,211,102,0.3); }
+    .emp-btn-back { display:inline-flex; align-items:center; gap:0.6rem; background:transparent; color:rgba(245,240,232,0.7); border:1px solid rgba(245,240,232,0.25); padding:0.85rem 1.8rem; border-radius:0; font-family:'Barlow Condensed',sans-serif; font-size:0.82rem; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none; transition:all 0.3s ease; }
+    .emp-btn-back:hover { border-color:#E85D20; color:#E85D20; transform:translateY(-2px); }
+    /* Mobile */
+    @media(max-width:680px) {
+      .emp-hero { min-height:70vh; padding:5rem 5vw 4rem; }
+      .emp-about { padding:4rem 5vw; }
+      .dados-section { padding:3rem 5vw; }
+      .dados-grid { grid-template-columns:1fr 1fr; }
+      .emp-cta-section { padding:3.5rem 5vw; }
+      .emp-cta-btns { flex-direction:column; align-items:center; }
+      .di-item-contact { gap:1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <a href="https://wa.me/5511999999999" class="whatsapp-fab" target="_blank"><svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+
+  <nav id="mainNav" style="position:fixed;top:0;left:0;right:0;z-index:1000;height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:rgba(8,8,8,0.97);border-bottom:1px solid #E85D2022;">
+    <a href="index.html" style="text-decoration:none;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;letter-spacing:0.2em;color:#E85D20;">HOLDING</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.55rem;letter-spacing:0.4em;text-transform:uppercase;color:#777;">VINICIUS</div>
+    </a>
+    <a href="index.html#portfolio" class="nav-back-btn"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M10 6H2M5 3L2 6L5 9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Todas as empresas</a>
+  </nav>
+
+  <section class="emp-hero" style="padding-top:70px;">
+    <div class="emp-hero-content">
+      <div class="emp-logo-wrap">
+        <img src="data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200"><rect width="200" height="200" fill="#1A0A00"/><rect x="1" y="1" width="198" height="198" fill="none" stroke="#E85D20" stroke-width="1.5" opacity="0.4"/><text x="100" y="85" font-family="Georgia,serif" font-size="52" font-weight="bold" fill="#E85D20" text-anchor="middle" dominant-baseline="middle">VL</text><text x="100" y="125" font-family="Arial,sans-serif" font-size="11" fill="rgba(255,255,255,0.6)" text-anchor="middle" letter-spacing="3">HOLDING VINICIUS</text><line x1="40" y1="105" x2="160" y2="105" stroke="#E85D20" stroke-width="0.8" opacity="0.4"/></svg>" alt="Vinicius Logística" />
+      </div>
+      <span class="emp-tag">Logística · Transporte · Distribuição</span>
+      <h1 class="emp-hero-title">Vinicius<br>Logística</h1>
+      <p class="emp-hero-tagline">Sua carga no lugar certo, na hora certa.</p>
+      <a href="https://wa.me/5511999999999" class="emp-hero-btn" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Entre em contato
+      </a>
+    </div>
+  </section>
+
+  <section class="emp-about">
+    <div class="emp-about-inner">
+      <p class="emp-section-label">— Sobre a empresa</p>
+      <h2 class="emp-section-title">Conheça a <em>Logística</em></h2>
+      <div class="emp-divider"></div>
+      <p class="emp-desc">A Vinicius Logística oferece soluções completas de transporte e distribuição para empresas que precisam de agilidade, rastreabilidade e segurança em suas operações. Atendemos do pequeno ao grande volume.</p>
+      <p class="emp-desc">Nossa frota própria e rede de parceiros homologados garantem cobertura nacional com prazos competitivos. Oferecemos armazenagem, gestão de estoque, last mile e logística reversa como serviços integrados.</p>
+      <p class="emp-desc">Tecnologia de rastreamento em tempo real, relatórios de entrega e atendimento dedicado por conta garantem total visibilidade e controle para nossos clientes.</p>
+    </div>
+  </section>
+
+  <section class="dados-section">
+    <div class="dados-inner">
+      <p class="dados-eyebrow">— Dados da Empresa</p>
+      <h2 class="dados-title">Informações <em>essenciais</em></h2>
+      <div class="dados-grid">
+        <div class="di-item"><div class="di-label">Setor</div><div class="di-value">Logística e Transporte</div></div>
+<div class="di-item"><div class="di-label">Cobertura</div><div class="di-value">Nacional</div></div>
+<div class="di-item"><div class="di-label">Serviços</div><div class="di-value">Transporte, armazenagem, last mile</div></div>
+<div class="di-item"><div class="di-label">Tecnologia</div><div class="di-value">Rastreamento em tempo real</div></div>
+<div class="di-item"><div class="di-label">Frota</div><div class="di-value">Própria e parceiros homologados</div></div>
+<div class="di-item"><div class="di-label">Grupo</div><div class="di-value">Holding Vinicius</div></div>
+      </div>
+      <div class="di-item-contact">
+        <div class="di-contact-group"><span class="di-contact-label">WhatsApp</span><span class="di-contact-val"><a href="https://wa.me/5511999999999">(11) 99999-9999</a></span></div>
+        <div class="di-contact-group"><span class="di-contact-label">E-mail</span><span class="di-contact-val"><a href="mailto:contato@holdingvinicius.com.br">contato@holdingvinicius.com.br</a></span></div>
+        <div class="di-contact-group"><span class="di-contact-label">Grupo</span><span class="di-contact-val">Holding Vinicius</span></div>
+      </div>
+      <div class="di-item-oferece">
+        <div class="di-oferece-label">O que oferece</div>
+        <div class="di-oferece-text">Transporte, distribuição, armazenagem, gestão de estoque, last mile e logística reversa com cobertura nacional</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="emp-cta-section">
+    <div class="emp-cta-inner">
+      <h2 class="emp-cta-title">Quer saber mais ou fazer um pedido?</h2>
+      <div class="emp-cta-btns">
+        <a href="https://wa.me/5511999999999" class="emp-btn-wa" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chamar no WhatsApp
+        </a>
+        <a href="index.html#portfolio" class="emp-btn-back">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M10 6H2M5 3L2 6L5 9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Ver outras empresas
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+  (function(){
+    if(window.innerWidth>680)return;
+    var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.style.opacity='1';x.target.style.transform='translateY(0)';io.unobserve(x.target);}});},{threshold:0.08});
+    ['.emp-about','.dados-section','.emp-cta-inner'].forEach(function(s){var el=document.querySelector(s);if(!el)return;el.style.cssText+='opacity:0;transform:translateY(20px);transition:opacity 0.55s ease,transform 0.55s ease;';io.observe(el);});
+    var logo=document.querySelector('.emp-logo-wrap img');
+    if(logo){logo.style.cssText+='opacity:0;transform:scale(0.85);transition:opacity 0.6s ease 0.2s,transform 0.6s cubic-bezier(0.34,1.56,0.64,1) 0.2s;';setTimeout(function(){logo.style.opacity='1';logo.style.transform='scale(1)';},300);}
+  })();
+  </script>
+</body>
+</html>

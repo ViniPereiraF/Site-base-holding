@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato — Holding Vinicius</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+
+  <div class="contact-hero">
+    <div class="contact-hero-bg"></div>
+    <div class="contact-hero-content">
+      <p class="section-label">— Fale Conosco</p>
+      <h1 class="contact-title">Entre em<br><em>Contato</em></h1>
+    </div>
+  </div>
+
+  <div class="contact-body">
+    <div class="contact-grid">
+      <div class="contact-left reveal">
+        <div class="contact-info-block"><div class="contact-info-label">Sede</div><div class="contact-info-value">Brasil — Grupo Holding Vinicius</div></div>
+        <div class="contact-info-block"><div class="contact-info-label">WhatsApp</div><div class="contact-info-value"><a href="https://wa.me/5577991347726">(77) 99134-7726</a></div></div>
+        <div class="contact-info-block"><div class="contact-info-label">E-mail</div><div class="contact-info-value"><a href="mailto:contato@holdingvinicius.com.br">contato@holdingvinicius.com.br</a></div></div>
+        <div class="contact-info-block"><div class="contact-info-label">Atendimento</div><p class="contact-info-note">Respondemos em até 48 horas úteis. Para assuntos urgentes, utilize o WhatsApp. Todas as informações são tratadas com total sigilo.</p></div>
+        <a href="https://wa.me/5577991347726" class="whatsapp-btn" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span>Chamar no WhatsApp</span>
+        </a>
+      </div>
+
+      <div class="contact-right reveal">
+        <form id="contactForm" onsubmit="handleFormSubmit(event)" class="contact-form">
+          <div class="form-section-title">Seus Dados</div>
+          <div class="form-group"><label class="form-label">Nome completo *</label><input id="f-nome" class="form-input" type="text" placeholder="Seu nome completo" required /></div>
+          <div class="form-group"><label class="form-label">E-mail *</label><input id="f-email" class="form-input" type="email" placeholder="seu@email.com" required /></div>
+
+          <div class="form-section-title">Dados da Empresa</div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">Nome da empresa</label><input id="f-empresa" class="form-input" type="text" placeholder="Razão social ou nome fantasia" /></div>
+            <div class="form-group"><label class="form-label">CNPJ (se houver)</label><input id="f-cnpj" class="form-input" type="text" placeholder="00.000.000/0000-00" /></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label class="form-label">Setor de atuação</label><input id="f-setor" class="form-input" type="text" placeholder="Ex.: Alimentício, Saúde..." /></div>
+            <div class="form-group"><label class="form-label">Faturamento mensal estimado</label><select id="f-fat" class="form-input form-select"><option value="">Selecione uma faixa</option><option>Ainda não fatura (ideia/startup)</option><option>Até R$ 5.000/mês</option><option>R$ 5.001 a R$ 20.000/mês</option><option>R$ 20.001 a R$ 100.000/mês</option><option>Acima de R$ 100.000/mês</option><option>Prefiro não informar</option></select></div>
+          </div>
+          <div class="form-group"><label class="form-label">Localização da empresa</label><input id="f-local" class="form-input" type="text" placeholder="Cidade / Estado" /></div>
+
+          <div class="form-section-title">Assunto &amp; Mensagem</div>
+          <div class="form-group"><label class="form-label">Assunto</label><select id="f-assunto" class="form-input form-select"><option value="">Selecione o assunto</option><option>Parceria Comercial</option><option>Investimento / Participação no Grupo</option><option>Crystals &amp; Minerals</option><option>Café Gourmet</option><option>Temperos do Neto</option><option>Mel Puríssimo</option><option>Cidinha Amigurumi</option><option>Enfermagem / Home Care</option><option>Granja — Ovos Frescos</option><option>Conteúdo Digital</option><option>Estruturação de Holding</option><option>Outros</option></select></div>
+          <div class="form-group"><label class="form-label">Mensagem *</label><textarea id="f-msg" class="form-input form-textarea" placeholder="Descreva sua proposta, dúvida ou como podemos colaborar..." required></textarea></div>
+
+          <button type="submit" class="btn-primary btn-full">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            <span>Enviar via WhatsApp</span>
+          </button>
+          <p class="form-note">Ao enviar, você será redirecionado ao WhatsApp com seus dados preenchidos. Concordo com a <a href="legal.html#privacidade">Política de Privacidade</a>.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="footer-placeholder"></div>
+
+  <script src="components.js"></script>
+  
+  <script src="script.js"></script>
+</body>
+</html>
